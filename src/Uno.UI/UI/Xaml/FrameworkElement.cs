@@ -16,6 +16,7 @@ using Windows.UI.Xaml.Automation;
 using Windows.UI.Core;
 using System.ComponentModel;
 using Uno.UI.DataBinding;
+using Uno.UI.Xaml;
 #if XAMARIN_ANDROID
 using View = Android.Views.View;
 #elif XAMARIN_IOS_UNIFIED
@@ -79,6 +80,18 @@ namespace Windows.UI.Xaml
 		/// Indicates that this view can participate in layout optimizations using the simplest logic.
 		/// </summary>
 		protected virtual bool IsSimpleLayout => false;
+
+		#region Tag Dependency Property
+		public TransitionCollection Tag
+		{
+			get => GetTagValue();
+			set => SetTagValue(value);
+		}
+
+		[GeneratedDependencyProperty(DefaultValue = null)]
+		public static DependencyProperty TagProperty { get; } = CreateTagProperty();
+
+		#endregion
 
 		partial void Initialize()
 		{

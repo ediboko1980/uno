@@ -718,23 +718,6 @@ namespace <#= mixin.NamespaceName #>
 
 		#endregion
 #endif
-
-		#region Tag Dependency Property
-
-		public new object Tag
-		{
-			get { return this.GetValue(TagProperty); }
-			set { this.SetValue(TagProperty, value); }
-		}
-
-		public static DependencyProperty TagProperty { get ; } =
-			DependencyProperty.Register("Tag", typeof(object), typeof(<#= mixin.ClassName #>), new PropertyMetadata(null, (s, e) => (s as <#= mixin.ClassName #>).OnTagChanged(e)));
-
-		private void OnTagChanged(DependencyPropertyChangedEventArgs e)
-		{
-		}
-
-		#endregion
 	
 		#region Transitions Dependency Property
 

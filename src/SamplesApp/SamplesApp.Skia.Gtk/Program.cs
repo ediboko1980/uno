@@ -19,6 +19,8 @@ namespace SkiaSharpExample
 				expArgs.ExitApplication = true;
 			};
 
+			Windows.UI.Xaml.FrameworkElement.TagProperty
+
 			var host = new GtkHost(() => new SamplesApp.App(), args);
 
 			host.Run();
